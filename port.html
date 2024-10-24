@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tydzns | Portfolio</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: system-ui;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: #fff;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: lightgray;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes move-right {
+            from { transform: translateX(-10%) }
+            to { transform: translateX(0) }
+        }
+
+        @keyframes move-left {
+            from { transform: translateX(10%) }
+            to { transform: translateX(0) }
+        }
+
+        @keyframes bg-move {
+            from { background-position: 0 0; }
+            to { background-position: 0 100%; }
+        }
+
+        main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 0;
+            animation: fade 1s ease 1;
+        }
+
+        nav {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(98, 123, 196, 0.75);
+            border-bottom: 2px solid cornflowerblue;
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: flex-start;
+            padding: 1.25vw 0;
+            animation: fade 1s ease 1;
+        }
+
+        nav li, nav li ul {
+            display: inline;
+            list-style: none;
+        }
+
+        nav li ul a {
+            text-decoration: none;
+            font-size: 1.65vw;
+            color: ghostwhite;
+            text-transform: capitalize;
+            font-family: "Poppins", sans-serif;
+            padding: 5px;
+            margin: 0 1.75vw;
+            position: relative;
+            transition: 300ms ease;
+        }
+
+        nav li ul a:hover, nav li ul a:focus {
+            color: rgb(178, 178, 241);
+        }
+
+        nav li ul a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: ghostwhite;
+            right: 0;
+            height: 0.15vw;
+            width: 0;
+            transition: 300ms ease;
+        }
+
+        nav li ul a:hover::before {
+            width: 100%;
+            background-color: rgb(178, 178, 241);
+        }
+
+        article {
+            padding: 2.5vh 0;
+        }
+
+        .art-1 {
+            padding: 0;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, transparent, ghostwhite), url("checker_pattern_blue.png");
+            position: relative;
+            animation: bg-move 15s linear infinite reverse;
+        }
+
+        .art-1 .span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.65);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .art-1 div {
+            animation: move-left 1.5s ease 1;
+        }
+
+        .art-1 img {
+            filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.35));
+            animation: move-right 1.5s ease 1;
+            width: 30%;
+        }
+
+        .art-1 header {
+            color: ghostwhite;
+            font-size: 4vw;
+            font-weight: 800;
+            font-family: "Poppins", sans-serif;
+            line-height: 3.75vw;
+            -webkit-text-stroke-color: cornflowerblue;
+            -webkit-text-stroke-width: 0.1vw;
+        }
+
+        .art-1 p {
+            color: cornflowerblue;
+            font-size: 2vw;
+            margin: 1vw 0;
+            font-weight: 800;
+        }
+
+        .art-2 {
+            background-color: ghostwhite;
+        }
+
+        .art-2 h1 {
+            color: #222;
+            margin: 0 2.5vw;
+            text-transform: capitalize;
+            font-size: 5vw;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .card-holder {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 1vw;
+        }
+
+        .card {
+            border: 2px solid royalblue;
+            padding: 1vw;
+            width: 450px;
+            flex-grow: 1;
+            margin: 1vw;
+            background-color: #fff;
+            border-radius: 0.3vw;
+            position: relative;
+        }
+
+        .card-header {
+            font-weight: 600;
+            font-size: 2.25vw;
+            color: #222;
+            margin: 0.5vw;
+            text-transform: capitalize;
+            line-height: 2.25vw;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .card p {
+            color: #888;
+            font-size: 1.25vw;
+            margin: 0.5vw;
+        }
+
+        .info-row {
+            height: 0.95vw;
+            background-color: ghostwhite;
+            border: 0.1vw solid lightgray;
+            margin: 0.5vw;
+            position: relative;
+            padding: 0.2vw;
+        }
+
+        .progress {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: royalblue;
+            position: absolute;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .progress span {
+            color: #fff;
+            font-size: 0.8vw;
+            font-weight: 600;
+            margin: 0 0.2vw;
+        }
+
+        .transition {
+            width: 100%;
+            height: 33vh;
+            transform: translateY(1.5vw);
+        }
+
+        .art-3 {
+            background: linear-gradient(to bottom, royalblue, rgb(129, 163, 225));
+        }
+
+        .art-3 h1 {
+            color: ghostwhite;
+            margin: 0 2.5vw;
+            text-transform: capitalize;
+            font-size: 5vw;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .sub-heading {
+            color: azure;
+            margin: 0 2.5vw;
+            font-size: 2vw;
+        }
+
+        .ddc {
+            margin: 2.5vw;
+        }
+
+        .dropdown {
+            margin-bottom: 2vw;
+            width: 100%;
+            overflow: hidden;
+            transition: 300ms ease;
+        }
+
+        .dropdown-question {
+            background-color: ghostwhite;
+            color: #222;
+            padding: 15px;
+            font-size: 1.45vw;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            transition: 300ms ease;
+            border-bottom: 0.15vw solid gainsboro;
+        }
+
+        .dropdown-question:hover {
+            background-color: rgb(227, 241, 255);
+        }
+
+        .dropdown-answer {
+            background-color: #e4eaff;
+            padding: 0.5vw;
+            display: none;
+        }
+
+        .dropdown-answer p {
+            margin: 0.85vw;
+            color: #222;
+            font-size: 1.05vw;
+        }
+
+        /* Keyframes for fading in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* When the dropdown is open, fade in */
+        .dropdown.open .dropdown-answer {
+            display: block;
+            animation: fadeIn 0.3s forwards; /* Only play fade-in effect */
+        }
+
+        .art-4 {
+            background-image: linear-gradient(to right, ghostwhite, ghostwhite, rgba(250, 250, 250, 0.9)), url("checker_pattern_blue.png");
+            animation: bg-move 15s infinite linear;
+            border-top: 0.3vw solid royalblue;
+        }
+
+        .art-4 h1 {
+            color: #222;
+            margin: 0 2.5vw;
+            text-transform: capitalize;
+            font-size: 5vw;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .art-4 p {
+            color: #222;
+            margin: 0 2.5vw;
+            font-size: 2vw;
+        }
+
+        .button-holder {
+            margin: 2.5vw;
+        }
+
+        .button-holder a {
+            padding: 1vw;
+            margin: 2.5vw 0;
+            border: 0.15vw solid gainsboro;
+            display: block;
+            text-align: center;
+            font-size: 1.35vw;
+            text-decoration: none;
+            color: ghostwhite;
+        }
+
+        #d {
+            background-color: #5a66f2;
+            transition: 300ms ease;
+        }
+
+        #d:hover, #d:active, #d:focus {
+            background-color: #424fe2;
+        }
+
+        #g {
+            background-color: lightgray;
+            transition: 300ms ease;
+        }
+
+        #g:hover, #g:focus, #g:active {
+            background-color: rgb(193, 193, 193);
+            transition: 300ms ease;
+        }
+
+        .art-5 {
+            background-color: rgb(0, 32, 130);
+            padding: 0;
+            height: 17.5vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .art-5::after {
+            content: '';
+            width: 30vw;
+        }
+
+        .art-5 header {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 2vw;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            margin: 0.5vw;
+        }
+
+        .icons i {
+            font-size: 1.5vw;
+            text-decoration: none;
+            color:  rgba(255, 255, 255, 0.25);
+            margin: 0.5vw;
+        }
+
+        #di, #gi {
+            transition: 300ms ease;
+        }
+
+        #di:hover, #di:focus, #di:active {
+            color: #5a66f2;
+        }
+
+        #gi:hover, #gi:active, #gi:focus {
+            color: gainsboro;
+        }
+
+        .art-5 img {
+            position: absolute;
+            height: 30vh;
+            bottom: 0;
+            right: 2.5%;
+        }
+
+        button {
+            padding: 2%;
+            margin: 2vh;
+            position: fixed;
+            background-color: rgb(233, 255, 255);
+            font-size: 2vw;
+            top: 0;
+            left: 0;
+            display: none;
+            clip-path: circle(40% at 50% 50%);
+            z-index: 3;
+            cursor: pointer;
+        }
+
+        aside {
+            z-index: 2;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: -100%;
+            background-color: azure;
+            display: none;
+            transition: 300ms ease;
+            border-bottom: 0.45vw solid cornflowerblue;
+        }
+
+        aside a {
+            display: block;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.45);
+            font-size: 4vw;
+            margin: 5%;
+            text-transform: capitalize;
+            transition: 300ms ease;
+        }
+
+        aside a:active {
+            color: #222;
+        }
+
+        .menu-open {
+            top: 0;
+        }
+
+        @media screen and (width <= 768px) {
+
+            button {
+                display: block;
+            }
+
+            aside {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            nav {
+                display: none;
+            }
+
+            article {
+                padding: 1.25vh 0;
+            }
+
+            .art-5 img {
+                height: 20vh;
+            }
+
+            .art-1 span {
+                flex-direction: column-reverse;
+            }
+
+            .art-1 header {
+                font-size: 7.5vw;
+                line-height: 100%;
+            }
+
+            .art-1 p {
+                font-size: 3vw;
+            }
+
+            .art-1 img {
+                width: 40%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <!-- nav -->
+    <nav>
+        <li>
+            <ul><a href="#art-1">home</a></ul>
+            <ul><a href="#art-2">about me</a></ul>
+            <ul><a href="#art-3">commissions</a></ul>
+            <ul><a href="#art-4">contacts</a></ul>
+            <ul><a target="_blank" href="https://www.roblox.com/users/513606627/profile">roblox account</a></ul>
+        </li>
+    </nav>
+    <!-- mobile nav -->
+    <button type="button" id="mnb"><i class="bi bi-list"></i></button>
+    <aside id="mnm">
+        <div>
+            <a href="#art-1">home</a>
+            <a href="#art-2">about me</a>
+            <a href="#art-3">commissions</a>
+            <a href="#art-4">contacts</a>
+            <a target="_blank" href="https://www.roblox.com/users/513606627/profile">roblox account</a>
+        </div>
+    </aside>
+    <main>
+        <!-- art-1 -->
+        <article class="art-1" id="art-1">
+            <span class="span">
+                <img src="my_amapiano_avatar_edit.png" alt="avatar">
+                <div>
+                    <header>Hello, I am tydzns.</header>
+                    <p>Web Developer</p>
+                </div>
+            </span>
+        </article>
+        <!-- art-2 -->
+        <article class="art-2" id="art-2">
+            <h1>about me</h1>
+            <div class="card-holder">
+                <div class="card">
+                    <header class="card-header">basic info</header>
+                    <p>• <script>const webDate = new Date(); document.write(webDate.getUTCFullYear() - 2007);</script> years old (01/31/2007)</p>
+                    <p>• Mixed race</p>
+                    <p>• Autistic</p>
+                    <p>• Polyglot</p>
+                    <p>• Male</p>
+                </div>
+                <div class="card">
+                    <header class="card-header">the goal</header>
+                    <p>My goal is to provide my clients with <b>high-quality</b> websites which can be relied on.</p>
+                    <p>I can handle nearly every task. Be it a <b>portfolio</b>, <b>corperate</b>, <b>web app</b>, you name it! Only except my browser doesn't accept API's (yet).</p>
+                </div>
+                <div class="card">
+                    <header class="card-header">skills</header>
+                    <p>• HTML/CSS</p>
+                    <div class="info-row">
+                        <div class="progress" style="width: 80%;"><span>80%</span></div>
+                    </div>
+                    <p>• JavaScript</p>
+                    <div class="info-row">
+                        <div class="progress" style="width: 72%;"><span>72%</span></div>
+                    </div>
+                    <p>• PHP</p>
+                    <div class="info-row">
+                        <div class="progress" style="width: 42%"><span>42%</span></div>
+                    </div>
+                    <p>• Python</p>
+                    <div class="info-row">
+                        <div class="progress" style="width: 63%"><span>63%</span></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <header class="card-header">hobbies</header>
+                    <p>On my free time, I like to...</p>
+                    <p>• Study languages</p>
+                    <p>• Teach</p>
+                    <p>• Play video games</p>
+                    <p>• Code</p>
+                    <p>That's just the main criteria, although I do a lot more than just that!</p>
+                </div>
+            </div>
+        </article>
+        <!-- transition -->
+        <img src="wave-haikei-ghostwhite-royalblue.png" alt="transition" class="transition">
+        <!-- art-3 -->
+        <article class="art-3" id="art-3">
+            <h1>commissions</h1>
+            <p class="sub-heading">Here's a brief QNA concerning commissions if you're interested.</p>
+            <div class="ddc">
+                <div class="dropdown">
+                    <div class="dropdown-question" onclick="toggleDropdown(this)">
+                        <h3>What are the prices?</h3>
+                    </div>
+                    <div class="dropdown-answer">
+                        <p>Bear in mind that these are <b>the suggested prices</b> &amp; can be altered depending on the client's budget.<br>The currency can also be negotiated.</p>
+                        <hr style="margin: 0.85vw;">
+                        <p>• <b>Informational / Small business / Portfolio</b> - $80.00<br>Annual moderation - $40.00</p>
+                        <p>• <b>Corperate</b> - $320.00<br>Annual moderation - $40.00</p>
+                        <p>• <b>E-commerce</b> - $1,750.00<br>Annual moderation - $40.00</p>
+                        <p>• <b>Web App</b> - $2,300.00<br>Annual moderation - $40.00</p>
+                        <p><i>The annual moderation fee stays constant.</i></p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-question" onclick="toggleDropdown(this)">
+                        <h3>Do you pay for domains?</h3>
+                    </div>
+                    <div class="dropdown-answer">
+                        <p><b>No</b>, I do not personally pay for the domains. However it does get paid with the consumer's compensation.</p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-question" onclick="toggleDropdown(this)">
+                        <h3>Where do you host?</h3>
+                    </div>
+                    <div class="dropdown-answer">
+                        <p>I host each website using <b>GitHub Pages</b> as my default hosting provider.</p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-question" onclick="toggleDropdown(this)">
+                        <h3>How can I reach you?</h3>
+                    </div>
+                    <div class="dropdown-answer">
+                        <p>The clients may reach me via <b>Gmail</b> or <b>Discord</b> as listed in <a href="#art-4">Contacts</a>.<br>I'll be sure to check it regularly.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- art-4 -->
+        <article class="art-4" id="art-4">
+            <h1>contacts</h1>
+            <p>Here are a few places you can reach me down below.</p>
+            <div class="button-holder">
+                <a target="_blank" href="https://discord.com/users/704172704994951228/" id="d"><i class="bi bi-discord"></i> Reach me on Discord</a>
+                <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=therealtydzns@gmail.com&su=Subject%20Here&body=Hello%20therealtydzns!" id="g"><i class="bi bi-google"></i> Reach me on Gmail</a>
+            </div>
+        </article>
+        <!-- art-5 -->
+        <article class="art-5">
+            <div>
+                <header>Copyright &copy; <script>document.write(webDate.getUTCFullYear());</script> therealtydzns@gmail.com</header>
+                <div class="icons">
+                    <a target="_blank" href="https://discord.com/users/704172704994951228/"><i id="di" class="bi bi-discord"></i></a>
+                    <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=therealtydzns@gmail.com&su=Subject%20Here&body=Hello%20therealtydzns!"><i id="gi" class="bi bi-google"></i></a>
+                </div>
+                <img src="crossed_arms_avatar_edit.png" alt="">
+            </div>
+        </article>
+    </main>
+    <script>
+        function toggleDropdown(element) {
+            const dropdown = element.parentElement;
+
+            if (dropdown.classList.contains('open')) {
+                dropdown.classList.remove('open');
+                dropdown.querySelector('.dropdown-answer').style.display = 'none';
+            } else {
+                const answer = dropdown.querySelector('.dropdown-answer');
+                answer.style.display = 'block';
+                dropdown.classList.add('open');
+            }
+        }
+
+        const mnb = document.getElementById("mnb");
+        const mnm = document.getElementById("mnm");
+        const mnml = document.querySelectorAll("aside a");
+
+        mnb.addEventListener("click", () => {
+            mnm.classList.toggle("menu-open");
+        });
+
+        mnml.forEach(link => {
+
+            link.addEventListener("click", () => {
+                mnm.classList.remove("menu-open");
+            });
+
+        });
+    </script>
+</body>
+</html>
