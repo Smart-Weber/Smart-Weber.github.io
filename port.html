@@ -80,7 +80,7 @@
 
         nav li ul a {
             text-decoration: none;
-            font-size: 1.65vw;
+            font-size: clamp(15px, 1.5vw, 60px);
             color: ghostwhite;
             text-transform: capitalize;
             font-family: "Poppins", sans-serif;
@@ -112,7 +112,7 @@
         }
 
         article {
-            padding: 2.5vh 0;
+            padding: 2.5em 0;
         }
 
         .art-1 {
@@ -147,7 +147,7 @@
 
         .art-1 header {
             color: ghostwhite;
-            font-size: 4vw;
+            font-size: clamp(30px, 5vw, 90px);
             font-weight: 800;
             font-family: "Poppins", sans-serif;
             line-height: 3.75vw;
@@ -157,20 +157,21 @@
 
         .art-1 p {
             color: cornflowerblue;
-            font-size: 2vw;
+            font-size: clamp(18px, 2.25vw, 60px);
             margin: 1vw 0;
             font-weight: 800;
         }
 
         .art-2 {
             background-color: ghostwhite;
+            padding-bottom: 0;
         }
 
         .art-2 h1 {
             color: #222;
             margin: 0 2.5vw;
             text-transform: capitalize;
-            font-size: 5vw;
+            font-size: clamp(14px, 4.5vw, 85px);
             font-family: "Poppins", sans-serif;
         }
 
@@ -193,7 +194,7 @@
 
         .card-header {
             font-weight: 600;
-            font-size: 2.25vw;
+            font-size: clamp(12px, 2.5vw, 45px);
             color: #222;
             margin: 0.5vw;
             text-transform: capitalize;
@@ -203,7 +204,7 @@
 
         .card p {
             color: #888;
-            font-size: 1.25vw;
+            font-size: clamp(8px, 1.65vw, 35px);
             margin: 0.5vw;
         }
 
@@ -229,15 +230,15 @@
 
         .progress span {
             color: #fff;
-            font-size: 0.8vw;
+            font-size: clamp(4px, 1.25vw, 20px);
             font-weight: 600;
             margin: 0 0.2vw;
         }
 
         .transition {
             width: 100%;
-            height: 33vh;
-            transform: translateY(1.5vw);
+            height: clamp(1em, 10vw, 10em);
+            transform: translateY(12.5%);
         }
 
         .art-3 {
@@ -246,24 +247,24 @@
 
         .art-3 h1 {
             color: ghostwhite;
-            margin: 0 2.5vw;
+            margin: 0 4.5%;
             text-transform: capitalize;
-            font-size: 5vw;
+            font-size: clamp(14px, 4.5vw, 85px);
             font-family: "Poppins", sans-serif;
         }
 
         .sub-heading {
             color: azure;
-            margin: 0 2.5vw;
-            font-size: 2vw;
+            margin: 0 4.5%;
+            font-size: clamp(10px, 2.5vw, 38px);
         }
 
         .ddc {
-            margin: 2.5vw;
+            margin: 5%;
         }
 
         .dropdown {
-            margin-bottom: 2vw;
+            margin-bottom: 2%;
             width: 100%;
             overflow: hidden;
             transition: 300ms ease;
@@ -272,8 +273,8 @@
         .dropdown-question {
             background-color: ghostwhite;
             color: #222;
-            padding: 15px;
-            font-size: 1.45vw;
+            padding: 2%;
+            font-size: clamp(8px, 1.75vw, 55px);
             cursor: pointer;
             font-family: "Poppins", sans-serif;
             transition: 300ms ease;
@@ -286,14 +287,14 @@
 
         .dropdown-answer {
             background-color: #e4eaff;
-            padding: 0.5vw;
+            padding: 1%;
             display: none;
         }
 
         .dropdown-answer p {
-            margin: 0.85vw;
+            margin: 1%;
             color: #222;
-            font-size: 1.05vw;
+            font-size: clamp(8px, 1.25vw, 35px);
         }
 
         /* Keyframes for fading in */
@@ -320,29 +321,29 @@
 
         .art-4 h1 {
             color: #222;
-            margin: 0 2.5vw;
+            margin: 0 4.5%;
             text-transform: capitalize;
-            font-size: 5vw;
+            font-size: clamp(14px, 4.5vw, 85px);
             font-family: "Poppins", sans-serif;
         }
 
         .art-4 p {
             color: #222;
-            margin: 0 2.5vw;
-            font-size: 2vw;
+            margin: 0 4.5%;
+            font-size: clamp(10px, 1.5vw, 70px);
         }
 
         .button-holder {
-            margin: 2.5vw;
+            margin: 4.5%;
         }
 
         .button-holder a {
             padding: 1vw;
-            margin: 2.5vw 0;
+            margin: 2% 0;
             border: 0.15vw solid gainsboro;
             display: block;
             text-align: center;
-            font-size: 1.35vw;
+            font-size: clamp(8px, 1.75vw, 40px);
             text-decoration: none;
             color: ghostwhite;
         }
@@ -369,7 +370,6 @@
         .art-5 {
             background-color: rgb(0, 32, 130);
             padding: 0;
-            height: 17.5vh;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
@@ -378,6 +378,13 @@
         .art-5::after {
             content: '';
             width: 30vw;
+        }
+
+        .fc {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            padding: 1%;
         }
 
         .art-5 header {
@@ -389,10 +396,10 @@
         }
 
         .icons i {
-            font-size: 1.5vw;
+            font-size: clamp(6px, 1.5vw, 35px);
             text-decoration: none;
             color:  rgba(255, 255, 255, 0.25);
-            margin: 0.5vw;
+            margin: 1%;
         }
 
         #di, #gi {
@@ -409,17 +416,17 @@
 
         .art-5 img {
             position: absolute;
-            height: 30vh;
+            height: 7.5%;
             bottom: 0;
             right: 2.5%;
         }
 
         button {
             padding: 2%;
-            margin: 2vh;
+            margin: 2.5%;
             position: fixed;
             background-color: rgb(233, 255, 255);
-            font-size: 2vw;
+            font-size: clamp(6px, 3vw, 35px);
             top: 0;
             left: 0;
             display: none;
@@ -444,8 +451,8 @@
             display: block;
             text-decoration: none;
             color: rgba(0, 0, 0, 0.45);
-            font-size: 4vw;
-            margin: 5%;
+            font-size: clamp(8px, 3.75vw, 35px);
+            margin: 10%;
             text-transform: capitalize;
             transition: 300ms ease;
         }
@@ -475,11 +482,11 @@
             }
 
             article {
-                padding: 1.25vh 0;
+                padding: 2.5% 0;
             }
 
             .art-5 img {
-                height: 20vh;
+                height: 5%;
             }
 
             .art-1 span {
@@ -640,7 +647,7 @@
         </article>
         <!-- art-5 -->
         <article class="art-5">
-            <div>
+            <div class="fc">
                 <header>Copyright &copy; <script>document.write(webDate.getUTCFullYear());</script> therealtydzns@gmail.com</header>
                 <div class="icons">
                     <a target="_blank" href="https://discord.com/users/704172704994951228/"><i id="di" class="bi bi-discord"></i></a>
